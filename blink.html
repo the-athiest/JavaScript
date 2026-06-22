@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .blink{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background:yellow;
+            position: absolute;
+            animation: blink 1s ease-out;
+        }
+        @keyframes blink {
+            0%{
+                transform: scale(0);
+                opacity: 1;
+            }
+            100%{
+               transform: scale(3);
+                opacity: 0; 
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <script>
+
+        document.addEventListener("click", (e)=> {
+    let blink = document.createElement("div");
+
+    blink.classList.add("blink");
+    blink.style.left = e.clientX - 15 + "px";
+    blink.style.top = e.clientY - 15 + "px";
+
+    document.body.appendChild(blink);
+
+    setTimeout(() => {
+        blink.remove();
+    }, 1000);
+});
+
+    </script>
+</body>
+</html>

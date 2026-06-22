@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=Number(prompt("Enter a total unit consumed"));
+        if(a>=0 && a<=300){
+            console.log(`total unit consumed = ${a} \n total bill = 0 (free)`);
+        }
+        else if(a>301 && a<=400){
+            console.log(`total unit consumed = ${a} \n total bill = 5₹`);
+        }
+        else if(a>401 && a<=500){
+            console.log(`total unit consumed = ${a} \n total bill = 10₹`);
+        }
+        else if(a>=501){
+            console.log(`total unit consumed = ${a} \n total bill = 100₹`);
+        }
+        else{
+            console.log(`invalid input`);
+        }
+        
+    </script>
+</body>
+</html>

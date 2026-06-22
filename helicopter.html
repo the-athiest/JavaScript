@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .box{
+            width: 400px;
+            height:400px;
+            position:absolute;
+            transition:all 6s linear;
+            
+        }
+        .box img{
+          object-fit:contain;
+          width:100%;
+          height:100%;
+         
+        }
+       body{
+        background-image: url(./blue-sky-with-clouds-sunny-day-sky-scene-with-cumulus-clouds-sunlight-landscape-in-winter-spring-and-summer-for-banner-poster-web-cartoon-heaven-with-clear-weather-and-clouds-sky-backgr.jpg);
+       background-size: cover;
+       background-repeat: no-repeat;
+       min-height: 100vh;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <img src="./10-45-06-463_512.gif" alt="img">
+    </div>
+
+<script>
+    let box=document.querySelector('.box')
+    document.addEventListener("click",(e)=>{
+        box.style.left=e.clientX+'px'
+        box.style.top=e.clientY+'px'
+    });
+    
+</script> 
+</body>
+</html>

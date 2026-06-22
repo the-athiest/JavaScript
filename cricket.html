@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let a = Number(prompt("Enter your score"));
+      if(a==0){
+        console.log("You are duck out");
+      }
+      else if(a>=1 && a<=25){
+        if(a==25){
+          console.log("you made a quarter century");
+        }
+        else{
+          console.log(`your earn only ${a} runs`);
+        }
+      }
+      else if(a>=26 && a<=50){
+         if(a==50){
+          console.log("you made a half century");
+        }
+        else{
+          console.log(`your earn only ${a} runs`);
+        }
+      }
+      else if(a>=51 && a<=75){
+            if(a==75){
+            console.log("you made a three quarter century");
+            }
+            else{
+            console.log(`your earn only ${a} runs`);
+            }
+      }
+      else if (a>=76 && a<=100){
+        if(a==100){
+          console.log("you made a century");
+        }
+        else{
+          console.log(`your earn only ${a} runs`);
+        }
+
+      }
+      else if(a>100){
+        console.log(`you made a big century and your score is ${a}`);
+      }
+      else{
+        console.log("invalid input");
+      }
+    </script>
+</body>
+</html>

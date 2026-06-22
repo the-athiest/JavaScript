@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let a=Number(prompt("Enter a first number"))
+        let b=Number(prompt("Enter a second number"))
+        let operator=prompt("Enter an operator only without space +, -, *, /")
+        switch(operator){
+            case "+":
+                console.log(`${a} + ${b} = ${a+b}`);
+                break;
+            case "-":
+                console.log(`${a} - ${b} = ${a-b}`);
+                break;
+            case "*":
+                console.log(`${a} * ${b} = ${a*b}`);
+                break;
+            case "/":
+                console.log(`${a} / ${b} = ${a/b}`);
+                break;
+            default:
+                console.log("invalid input");
+        }   
+
+    </script>
+</body>
+</html>

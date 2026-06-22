@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+
+        }
+        .box{
+            width: 400px;
+            height:400px;
+            position:absolute;
+            transition:all 6s linear;
+            
+        }
+        .box img{
+          object-fit:contain;
+          width:100%;
+          height:100%;
+         
+        }
+        video{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:-1;
+           
+        }
+        body{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <video src="./vid4.mp4" autoplay muted loop ></video>
+    <div class="box">
+        <img src="./white_cloud_serpent_gif_gif_by_testamenthellen-d65epw9_gif (998×637).gif" alt="img">
+    </div>
+
+<script>
+    let box=document.querySelector('.box')
+    document.addEventListener("click",(e)=>{
+        box.style.left=e.clientX+'px'
+        box.style.top=e.clientY+'px'
+    });
+    
+</script> 
+</body>
+</html>

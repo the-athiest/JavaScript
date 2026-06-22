@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter a number"));
+        let sum = 0;
+        debugger
+        while (num > 0) {
+            let digits = num % 10;
+            sum += digits;
+            num = Math.floor(num / 10); //math floor is used to round  the number like parseInt()
+        }
+        console.log("Sum of digits:", sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=Number(prompt("Enter a total amount of purchased:"));
+
+        if(a>=1000 && a<=2000){
+            let discount=a*0.1;
+            let total=a-discount;
+            console.log(`
+                        Actual price =${a}
+                        Discount 10% = ${discount}
+                        Discounted price =${total}`);
+        }
+        else if(a>=2001 && a<=3000){
+            let discount=a*0.2;
+            let total=a-discount;
+            console.log(`
+                        Actual price =${a} 
+                        Discount 20% = ${discount}
+                        Discounted price =${total}`);
+        }
+        else if(a>=3001 && a<=4000){
+            let discount=a*0.3;
+            let total=a-discount;
+            console.log(`
+                        Actual price =${a} 
+                        Discount 30% = ${discount}
+                        Discounted price =${total}`);
+        }
+        else if(a>=4001 && a<=5000){
+            let discount=a*0.4;
+            let total=a-discount;
+            console.log(`
+                        Actual price =${a} 
+                        Discount 40% = ${discount}
+                        Discounted price =${total}`);
+        }
+        else if(a>=5001){
+            let discount=a*0.5;
+            let total=a-discount;
+            console.log(`
+                        Actual price =${a} 
+                        Discount 50% = ${discount}
+                        Discounted price =${total}`);
+        }
+
+        else{
+            console.log(`You did not get any discount because you purchased items worth ${a}`);
+        }
+    </script>
+</body>
+</html>

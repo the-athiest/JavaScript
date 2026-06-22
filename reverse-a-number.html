@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let num=Number(prompt("Enter a number"));
+       let temp=num;
+       let reverse=0;
+       debugger
+         while(num>0){
+          let lastdigit = num % 10;
+          reverse = reverse * 10 + lastdigit; //multiply  by 10 
+          num=Math.floor(num / 10);
+         }
+         console.log("Reverse of the number is:", reverse);
+            if(temp === reverse){
+                console.log("It is a palindrome number");
+            } 
+            else {
+                console.log("It is not a palindrome number");
+            }
+    </script>
+</body>
+</html>

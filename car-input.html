@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            margin-left:200px;
+            padding: 20px;
+
+
+        }
+
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        .car {
+            width: 100%;
+            max-width: 520px;
+            background: rgb(255, 255, 255);
+            border-radius: 12px;
+            box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+        }
+
+        .car h1 {
+            font-size: 24px;
+            margin-bottom: 18px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+
+        .form-group label {
+
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: black;
+        }
+
+        .option-group,
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 12px;
+            border: 1px solid #242424;
+            border-radius: 8px;
+            background: #fbfbfb;
+        }
+
+        .option-group label,
+        .checkbox-group label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #111827;
+            margin-bottom: 0;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            padding: 10px 12px;
+            border: 1px solid #242424;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #111827;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 82px;
+        }
+
+        .submit-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        .submit-row button {
+            background: #2563eb;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .submit-row button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="car">
+            <h1>Car Details Form</h1>
+
+            <div class="form-group">
+                <label for="ownerName">Owner Name</label>
+                <input type="text" id="ownerName" name="ownerName" placeholder="Enter owner name">
+            </div>
+
+            <div class="form-group">
+                <label for="ownerEmail">Owner Email</label>
+                <input type="email" id="ownerEmail" name="ownerEmail" placeholder="Enter owner email">
+            </div>
+
+            <div class="form-group">
+                <label for="ownerPhone">Phone Number</label>
+                <input type="tel" id="ownerPhone" name="ownerPhone" placeholder="Enter phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="number" id="year" name="year" placeholder="Enter year">
+            </div>
+
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="color" id="color" name="color">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" placeholder="Enter date">
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" placeholder="Enter time">
+            </div>
+
+            <div class="form-group">
+                <label for="fuelType">Fuel Type</label>
+                <select id="fuelType" name="fuelType">
+                    <option value="">Select fuel type</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Transmission</label>
+                <div class="option-group">
+                    <label><input type="radio" name="transmission" value="manual"> Manual</label>
+                    <label><input type="radio" name="transmission" value="automatic"> Automatic</label>
+                    <label><input type="radio" name="transmission" value="semi-automatic"> Semi-Automatic</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Features</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="features" value="air-conditioning"> Air Conditioning</label>
+                    <label><input type="checkbox" name="features" value="gps"> GPS</label>
+                    <label><input type="checkbox" name="features" value="sunroof"> Sunroof</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" placeholder="Enter any extra details"></textarea>
+            </div>
+
+            <div class="submit-row">
+                <button onclick="details()">Submit Details</button>
+            </div>
+
+        </div>
+        <div id="output">
+
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        let details = () => {
+
+            let ownerName = document.getElementById("ownerName").value
+            let ownerEmail = document.getElementById("ownerEmail").value
+            let ownerPhone = document.getElementById("ownerPhone").value
+            let year = document.getElementById("year").value
+            let color = document.getElementById("color").value
+            let date = document.getElementById("date").value
+            let time = document.getElementById("time").value
+            let fuelType = document.getElementById("fuelType").value
+            let notes = document.getElementById("notes").value
+            let transmission = document.querySelector(
+                'input[name="transmission"]:checked'
+            );
+
+            transmission = transmission ? transmission.value : "Not Selected";
+
+            let features = [];
+
+            document
+                .querySelectorAll('input[name="features"]:checked')
+                .forEach(item => {
+                    features.push(item.value);
+                });
+            
+
+
+
+
+
+
+
+            document.getElementById("output").innerHTML = `
+           <h2>Car Details:</h2>
+           <p><strong>Owner Name:</strong> ${ownerName}</p>
+           <p><strong>Owner Email:</strong> ${ownerEmail}</p>
+           <p><strong>Owner Phone:</strong> ${ownerPhone}</p>
+           <p><strong>Year:</strong> ${year}</p>
+           <p><strong>Color:</strong> <span style="display:inline-block;width:20px;height:20px;background-color:${color};border:1px solid #000;"></span></p>
+           <p><strong>Date:</strong> ${date}</p>
+           <p><strong>Time:</strong> ${time}</p>
+           <p><strong>Fuel Type:</strong> ${fuelType}</p>
+             <p><strong>Transmission:</strong> ${transmission}</p>
+
+        <p><strong>Features:</strong> ${features.join(", ")}</p>
+           <p><strong>Notes:</strong> ${notes}</p>
+         
+
+       `;
+        }
+    </script>
+</body>
+
+</html>

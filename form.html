@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Details Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    padding:20px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:start;
+}
+
+.car
+{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+   
+
+}
+
+.car h1,
+.output-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.form-group{
+    display: block;
+    
+    align-items:center;
+    margin-bottom:15px;
+    gap:15px;
+}
+
+.form-group label{
+    font-weight:bold;
+     
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.option-group,
+.checkbox-group{
+    border:1px solid #ccc;
+    padding:10px;
+    border-radius:6px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.submit-row{
+    text-align:center;
+    margin-top:20px;
+}
+
+.submit-row button{
+    padding:12px 25px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.submit-row button:hover{
+    background:#1d4ed8;
+}
+
+.output-box p{
+    margin:10px 0;
+    line-height:1.6;
+}
+
+.color-box{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    border:1px solid #000;
+    vertical-align:middle;
+    margin-right:5px;
+}
+
+@media(max-width:768px){
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .form-group{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Form Section -->
+    <div class="car">
+
+        <h1>Car Details Form</h1>
+
+        <div class="form-group">
+            <label>Owner Name</label>
+            <input type="text" id="ownerName" placeholder="Enter owner name">
+        </div>
+
+        <div class="form-group">
+            <label>Owner Email</label>
+            <input type="email" id="ownerEmail" placeholder="Enter owner email">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="ownerPhone" placeholder="Enter phone number">
+        </div>
+
+        <div class="form-group">
+            <label>Year</label>
+            <input type="number" id="year" placeholder="Enter year">
+        </div>
+
+        <div class="form-group">
+            <label>Color</label>
+            <input type="color" id="color">
+        </div>
+
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="date">
+        </div>
+
+        <div class="form-group">
+            <label>Time</label>
+            <input type="time" id="time">
+        </div>
+
+        <div class="form-group">
+            <label>Fuel Type</label>
+            <select id="fuelType">
+                <option value="">Select Fuel Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Transmission</label>
+            <div class="option-group">
+                <label>
+                    <input type="radio" name="transmission" value="Manual">
+                    Manual
+                </label>
+
+                <label>
+                    <input type="radio" name="transmission" value="Automatic">
+                    Automatic
+                </label>
+
+                <label>
+                    <input type="radio" name="transmission" value="Semi Automatic">
+                    Semi Automatic
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Features</label>
+            <div class="checkbox-group">
+
+                <label>
+                    <input type="checkbox" name="features" value="Air Conditioning">
+                    Air Conditioning
+                </label>
+
+                <label>
+                    <input type="checkbox" name="features" value="GPS">
+                    GPS
+                </label>
+
+                <label>
+                    <input type="checkbox" name="features" value="Sunroof">
+                    Sunroof
+                </label>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea id="notes" placeholder="Enter extra details"></textarea>
+        </div>
+
+        <div class="submit-row">
+            <button onclick="details()">Submit Details</button>
+        </div>
+
+    </div>
+
+    <!-- Output Section -->
+    <div id="output" class="output-box">
+        <!-- <h2>Submitted Details</h2>
+        <p>Fill the form and click submit.</p> -->
+    </div>
+
+</div>
+
+<script>
+
+function details(){
+
+    let ownerName = document.getElementById("ownerName").value;
+    let ownerEmail = document.getElementById("ownerEmail").value;
+    let ownerPhone = document.getElementById("ownerPhone").value;
+    let year = document.getElementById("year").value;
+    let color = document.getElementById("color").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let fuelType = document.getElementById("fuelType").value;
+    let notes = document.getElementById("notes").value;
+
+    let transmission = document.querySelector(
+        'input[name="transmission"]:checked'
+    );
+
+    transmission = transmission ? transmission.value : "Not Selected";
+
+    let features = [];
+
+    document
+    .querySelectorAll('input[name="features"]:checked')
+    .forEach(item => {
+        features.push(item.value);
+    });
+
+    document.getElementById("output").innerHTML = `
+
+        <h2>Car Details</h2>
+
+        <p><strong>Owner Name:</strong> ${ownerName}</p>
+
+        <p><strong>Owner Email:</strong> ${ownerEmail}</p>
+
+        <p><strong>Phone Number:</strong> ${ownerPhone}</p>
+
+        <p><strong>Year:</strong> ${year}</p>
+
+        <p>
+            <strong>Color:</strong>
+            <span class="color-box"
+            style="background:${color};"></span>
+            ${color}
+        </p>
+
+        <p><strong>Date:</strong> ${date}</p>
+
+        <p><strong>Time:</strong> ${time}</p>
+
+        <p><strong>Fuel Type:</strong> ${fuelType}</p>
+
+        <p><strong>Transmission:</strong> ${transmission}</p>
+
+        <p><strong>Features:</strong> ${features.join(", ")}</p>
+
+        <p><strong>Additional Notes:</strong> ${notes}</p>
+
+    `;
+}
+
+</script>
+
+</body>
+</html>
